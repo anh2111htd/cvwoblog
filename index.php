@@ -45,7 +45,8 @@ require('includes/config.php'); ?>
 
 				$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
 				while($row = $stmt->fetch()){
-					
+					echo '<div>';
+					echo '<span>';
 					echo '<div id="home_post">';
 						echo '<h1><a href="viewpost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h1>';
 						echo '<p style="font-size:0.9em;"> Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
@@ -58,6 +59,13 @@ require('includes/config.php'); ?>
 						echo '<br>';
 						echo '<hr class="style12">';
 						echo '<br>';
+					echo '</div>';
+					echo '</span>';
+					echo '<span>';
+					echo '<div id="thumbail">';
+						echo '<img src="http://pad1.whstatic.com/images/1/19/Make-a-Picture-Link-in-HTML-Step-6.jpg" alt="some_text" style="width:25%;height:200;">';	
+					echo '</div>';
+					echo '</span>';
 					echo '</div>';
 				}
 

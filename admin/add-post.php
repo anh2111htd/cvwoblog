@@ -11,21 +11,20 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
   <title>Admin - Add Post</title>
   <link rel="stylesheet" href="../style/normalize.css">
   <link rel="stylesheet" href="../style/main.css">
-  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script>
           tinymce.init({
-              selector: "textarea",
+              selector: "textarea.editme",
               plugins: [
                   "advlist autolink lists link image charmap print preview anchor",
                   "searchreplace visualblocks code fullscreen",
                   "insertdatetime media table contextmenu paste"
               ],
-              toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-          });
-  </script>
+              toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+           });
+</script>
 </head>
 <body>
-
 <div id="wrapper">
 
 	<?php include('menu.php');?>
@@ -50,6 +49,10 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		if($postDesc ==''){
 			$error[] = 'Please enter the description.';
+		}
+
+		if(strlen($postDesc)) {
+			$error[] = 'Please decrese the length of description.';	
 		}
 
 		if($postCont ==''){
@@ -95,13 +98,24 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 		<input type='text' name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
 
 		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+		<textarea id='postDesc' onkeyup="update_length()" name='postDesc' cols='60' rows='10' "><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+		<div id="chars_counter"></div><span>Character limit: 500</span>
+		<script type="text/javascript">
+			var input = document.getElementById('postDesc');
+			var output = document.getElementById('chars_counter');
+			function update_length() {
+				output.innerHTML = input.value.length;
+				if (input.value.length > 500) {
+					alert("Description: character limit exceeded!")
+				} else {;}
+			}
+		</script>
 
 		<p><label>Content</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
+		<textarea class='editme' name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
 
 		<p><input type='submit' name='submit' value='Submit'></p>
 
 	</form>
-
 </div>
+

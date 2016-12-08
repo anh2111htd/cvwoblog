@@ -21,6 +21,12 @@
 /*Make blog posts with thumbails at home page*/
 #home_post {
 	float: right;
+	width: 70%;
+}
+
+#thumnail {
+	float: left;
+	width: 30%;
 }
 
 hr.style12 {
