@@ -1,6 +1,51 @@
 #wrapper {
-	margin:auto;
-	width:900px;
+    margin:auto;
+    width:960px;
+}
+
+/* style topbar */
+#topbar_ul {
+    text-align: justify;
+    margin: auto;
+    padding: 10px;
+    background: #FFE03F;
+}
+
+#topbar {
+    display: inline;
+    font-family: sans-serif; 
+    font-weight: bold;
+    color: #262626;
+}
+
+/*Make blog posts with thumbails at home page*/
+#home_post {
+	float: right;
+}
+
+hr.style12 {
+	  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+
+#readmore_box {
+	width:150px;
+	padding-top:5px;
+	border-style:solid;
+	border-color:#FFE03F;
+	border-width:1px;
+	padding-left:10px;
+	padding-bottom:5px;
+	padding-right: 10px;
+	border-radius: 25px;
+	font-style: bold;
+	font-family: rebuchet MS;
+	color:#000000;
 }
 
 #login {
@@ -20,6 +65,9 @@
 	margin-right: 20px;
 }
 
+.wr {
+ 
+}
 .clear {
 	clear: both;
 }
@@ -42,7 +90,7 @@ p,li {
 }
 
 a {
-	color: #EF1F2F;
+	color:#262626;
 	text-decoration: none;
 }
 
