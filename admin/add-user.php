@@ -1,4 +1,6 @@
-<?php //include config
+<?php 
+//For admin only - add new users
+//include config
 require_once('../includes/config.php');
 
 //if not logged in redirect to login page

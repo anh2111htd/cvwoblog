@@ -1,0 +1,1 @@
+<p style="text-align:center;"><img src="pic/footer.png"></p>

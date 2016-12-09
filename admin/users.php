@@ -1,4 +1,5 @@
 <?php
+//Show the list of current users
 //include config
 require_once('../includes/config.php');
 

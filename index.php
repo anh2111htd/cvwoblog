@@ -1,18 +1,9 @@
-<p style="text-align:center;"><img src="pic/logo.png"></p>
- <ul id="topbar_ul">
-  <span>
-   	<li id="topbar"><a href="index.php" id="wraptext_2"> READ </a></li>
-  	<li id="topbar"><a href="admin/login.php" id="wraptext_2">WRITE</a></li>
-  </span>
-  <span>   </span>
-  <span id="wraptext_1"> NUS CVWO Assignment 1</span>
- </ul> 
 <?php 
 /*
 The index file will list all posts from the posts table.
 A query is ran to select the columns from blog_posts then ordered by the postID in descending order.
 */
-
+require('top.php');
 require('includes/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +44,5 @@ require('includes/config.php'); ?>
 	</div>
 </body>
 </html>
+<?php require('footer.php'); ?>
 
-
-<p style="text-align:center;"><img src="pic/footer.png"></p>

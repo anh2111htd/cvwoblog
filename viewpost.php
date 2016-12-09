@@ -1,7 +1,7 @@
 <?php 
 /* viewpost.php is used to display any post that has been clicked on. */
 require('includes/config.php'); 
-
+require('top.php');
 $stmt = $db->prepare('SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = :postID');
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
@@ -17,23 +17,17 @@ if($row['postID'] == ''){
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog - <?php echo $row['postTitle'];?></title>
+    <title>Anh/blog - <?php echo $row['postTitle'];?></title>
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
 
-	<div id="wrapper">
-
-		<h1>Blog</h1>
-		<hr />
-		<p><a href="./">Blog Index</a></p>
-
-
+	<div id="wrapper">		
 		<?php	
 			echo '<div>';
 				echo '<h1>'.$row['postTitle'].'</h1>';
-				echo '<p>Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
+				echo '<p id="post_time">Posted on '.date('jS M Y', strtotime($row['postDate'])).'</p>';
 				echo '<p>'.$row['postCont'].'</p>';				
 			echo '</div>';
 		?>
@@ -42,3 +36,4 @@ if($row['postID'] == ''){
 
 </body>
 </html>
+<?php require('footer.php'); ?>
