@@ -51,8 +51,8 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 			$error[] = 'Please enter the description.';
 		}
 
-		if(strlen($postDesc)) {
-			$error[] = 'Please decrese the length of description.';	
+		if(strlen($postDesc)>500) {
+			$error[] = 'Please decrease the length of description.';	
 		}
 
 		if($postCont ==''){
