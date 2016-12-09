@@ -1,24 +1,12 @@
+<p style="text-align:center;"><img src="pic/logo.png"></p>
  <ul id="topbar_ul">
   <span>
-   	<li id="topbar"><a href="index.php"> HOME </a></li>
-  	<li id="topbar"><a href="admin/login.php"> . WRITE! </a></li>
+   	<li id="topbar"><a href="index.php" id="wraptext_2"> READ </a></li>
+  	<li id="topbar"><a href="admin/login.php" id="wraptext_2">WRITE</a></li>
   </span>
-  <span style=" width:300px;
- 			    padding-top:5px;
-  				border-style:solid;
-  				border-color:#FFFFFF;
-  				border-width:1px;
-  				padding-left:10px;
-  				padding-bottom:5px;
-  				padding-right: 10px;
-  				border-radius: 25px;
-  				font-style: bold;
-  				color:#FFFFFF;
-  				">
-		NUS CVWO Assignment 1
-</span>
+  <span>   </span>
+  <span id="wraptext_1"> NUS CVWO Assignment 1</span>
  </ul> 
-
 <?php 
 /*
 The index file will list all posts from the posts table.
@@ -37,19 +25,14 @@ require('includes/config.php'); ?>
 <body>
 
 	<div id="wrapper">
-		<h1>
-  			<span>Anh's</span><span style="color:#F7B731; font-family: Georgia;">Blog</span>
-		</h1>
 		<?php
 			try {
 
 				$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
 				while($row = $stmt->fetch()){
-					echo '<div>';
-					echo '<span>';
 					echo '<div id="home_post">';
 						echo '<h1><a href="viewpost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h1>';
-						echo '<p style="font-size:0.9em;"> Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
+						echo '<p id="post_time"> Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
 						echo '<p>'.$row['postDesc'].'</p>';				
 						echo '<p><a href="viewpost.php?id='.$row['postID'].'">  
 							<div id="readmore_box">
@@ -59,13 +42,6 @@ require('includes/config.php'); ?>
 						echo '<br>';
 						echo '<hr class="style12">';
 						echo '<br>';
-					echo '</div>';
-					echo '</span>';
-					echo '<span>';
-					echo '<div id="thumbail">';
-						echo '<img src="http://pad1.whstatic.com/images/1/19/Make-a-Picture-Link-in-HTML-Step-6.jpg" alt="some_text" style="width:25%;height:200;">';	
-					echo '</div>';
-					echo '</span>';
 					echo '</div>';
 				}
 
@@ -79,3 +55,4 @@ require('includes/config.php'); ?>
 </html>
 
 
+<p style="text-align:center;"><img src="pic/footer.png"></p>

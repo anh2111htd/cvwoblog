@@ -1,3 +1,4 @@
+ 		
 #wrapper {
     margin:auto;
     width:960px;
@@ -5,29 +6,51 @@
 
 /* style topbar */
 #topbar_ul {
-    text-align: justify;
+    text-align: center;
     margin: auto;
-    padding: 10px;
-    background: #FFE03F;
+    padding: 0px;
+    background: #FFFFFF;
 }
 
 #topbar {
     display: inline;
     font-family: sans-serif; 
     font-weight: bold;
+    margin-right: 10px;
     color: #262626;
 }
 
-/*Make blog posts with thumbails at home page*/
-#home_post {
-	float: right;
-	width: 70%;
+#wraptext_2 {
+	width:300px;
+    padding-top:5px;
+	border-style:solid;
+	border-color:#FFE03F;
+	border-width:3px;
+	padding-left:10px;
+	padding-bottom:5px;
+	padding-right: 10px;
+	color:#000000;
 }
 
-#thumnail {
-	float: left;
-	width: 30%;
+#wraptext_1 {
+	width:300px;
+    padding-top:5px;
+	border-style:solid;
+	border-color:#fff200;
+	border-width:1px;
+	padding-left:10px;
+	padding-bottom:5px;
+	padding-right: 10px;
+	border-radius: 25px;
+	color:#fff200;
 }
+
+#home_post {
+	margin-left:auto;
+  	margin-right:auto;
+	width: 80%;
+}
+
 
 hr.style12 {
 	  border: 0; 
@@ -40,7 +63,8 @@ hr.style12 {
 
 
 #readmore_box {
-	width:150px;
+	color:#FFE03F;
+	width:130px;
 	padding-top:5px;
 	border-style:solid;
 	border-color:#FFE03F;
@@ -49,9 +73,16 @@ hr.style12 {
 	padding-bottom:5px;
 	padding-right: 10px;
 	border-radius: 25px;
-	font-style: bold;
+	font-weight: bold;
 	font-family: rebuchet MS;
-	color:#000000;
+	color: red;
+	color:inherit;
+}
+
+#post_time {
+	font-size: 0.9em;
+	font-style: italic;
+	color: #FFE03F;
 }
 
 #login {
